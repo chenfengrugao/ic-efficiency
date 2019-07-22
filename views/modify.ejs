@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="words, 生词本, 例句"/>
+	<meta name="description" content="最灵活实用的生词本" />
+        <title>修改单词</title>
+	<link rel="stylesheet" href="public/bootstrap/4.1.3/bootstrap.min.css">
+	<script src="public/bootstrap/4.1.3/jquery-3.3.1.min.js"></script>
+	<script src="public/bootstrap/4.1.3/popper.min.js"></script>
+	<script src="public/bootstrap/4.1.3/bootstrap.min.js"></script>	     
+	<link rel="stylesheet" href="public/common.css">
+    </head>
+    
+    <body>
+        <div class="bg_white container">
+            <div class="text-center">      
+	        <p>修改单词</p>
+	    </div>
+
+	    <div class="">
+	        <form action="modify_handle" method="get">
+	            <input type="text" name="name" value="<%= name %>" placeholder="单词" /><br>
+  		    <input type="text" name="phonetic" value="<%= phonetic%>" placeholder="读音" /><br>
+ 		    <textarea name="explanation" rows="6" cols="30" placeholder="解释"><%= explanation%></textarea><br>
+		    <textarea name="sentence" rows="10" cols="30" placeholder="例句"><%= sentence%></textarea><br>
+		    <button type="submit">修改</button>
+		</form>
+	    </div>
+	</div>
+	
+    </body>
+</html>
+

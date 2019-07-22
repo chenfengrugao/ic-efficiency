@@ -1,0 +1,64 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #2d3743;
+}
+
+.header {
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+.footer {
+    padding: 3em;
+    font-size: 0.8em;
+    color: gray;
+}
+
+.bg_white {
+    background-color: white;
+}
+
+.word_card {
+    border: 0.1em solid #2d3743;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 1em;
+}
+
+.word_word {
+    font-family: Arail;
+    font-size: 1.3em;
+}
+
+.word_phonetic {
+    font-family: Arial;
+    color: #006745;
+}
+
+.word_small {
+    font-size: 0.8em;
+}
+
+.word_gray {
+    color: gray;
+}
+
+.word_bold {
+    font-weight: bold;
+}
+
+input {
+    width: 50%;
+}
+
+textarea {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+

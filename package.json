@@ -1,0 +1,17 @@
+{
+   "name": "iTS",
+   "version": "0.1.0",
+   "description": "issue tracking system",
+   "license": "MIT",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/chenfengrugao/its.git"
+   },
+   "scripts": {
+      "start": "node app.js"
+   },
+   "dependencies": {
+      "ejs": "~2.6.2",
+      "express": "~4.17.1"
+   }
+}

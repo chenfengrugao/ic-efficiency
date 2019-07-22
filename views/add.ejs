@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="words, 生词本, 例句"/>
+	<meta name="description" content="最灵活实用的生词本" />
+	<title>添加单词</title>
+	<link rel="stylesheet" href="public/bootstrap/4.1.3/bootstrap.min.css">
+	<script src="public/bootstrap/4.1.3/jquery-3.3.1.min.js"></script>
+	<script src="public/bootstrap/4.1.3/popper.min.js"></script>
+	<script src="public/bootstrap/4.1.3/bootstrap.min.js"></script>	     
+	<link rel="stylesheet" href="public/common.css">
+	<script>
+		function modal_show(id, editboxName){
+			$(id).modal('toggle');
+			var editbox = document.getElementsByName('editboxName')[0];
+			editbox.value = editboxName;
+		}
+		$(function(){
+			$('#insertPicture').on('shown.bs.modal', function(){
+				$('#insertPictureURL').val("");
+			});	
+			$('#insertURL').on('shown.bs.modal', function(){
+				$('#insertURLName').val("");
+				$('#insertURLURL').val("");
+			});				
+		});
+		function insert_picture(){
+			$('#insertPicture').modal('hide');
+			var url = $('#insertPictureURL').val();
+			if( url.length != 0){
+				var editboxName = document.getElementsByName('editboxName')[0].value;
+				var ta = document.getElementsByName(editboxName)[0];
+				ta.innerHTML += " <img src='" + url + "'><br> ";
+			}
+		}
+		function insert_url(n){
+			$('#insertURL').modal('hide');
+			var url = $('#insertURLURL').val();
+			if( url.length != 0){
+				var txt = $('#insertURLName').val();
+				var editboxName = document.getElementsByName('editboxName')[0].value;
+				var ta = document.getElementsByName(editboxName)[0];
+				ta.innerHTML += " <a href='" + url + "'>" + txt + "</a> ";
+			}
+		}
+	</script>
+    </head>
+    
+    <body>
+        <div class="bg_white container">
+            <div class="text-center">      
+	        <p>添加单词</p>
+	    </div>
+
+	    <div>
+	        <form action="add_handle" method="get">
+	            <input type="text" name="name" value="" placeholder="单词" /><br>
+				<input type="text" name="phonetic" value="" placeholder="读音" /><br>
+				<!-- toolbar -->
+				<div>
+					<a href="javascript:void(0)" onclick="modal_show('#insertPicture', 'explanation')">图片</a> 
+					<a href="javascript:void(0)" onclick="modal_show('#insertURL', 'explanation')">链接</a> 
+				</div>
+				<textarea name="explanation" rows="6" cols="30" placeholder="解释"></textarea><br>
+				<div>
+					<a href="javascript:void(0)" onclick="modal_show('#insertPicture', 'sentence')">图片</a> 
+					<a href="javascript:void(0)" onclick="modal_show('#insertURL', 'sentence')">链接</a>
+				</div>
+		    	<textarea name="sentence" rows="10" cols="30" placeholder="例句"></textarea><br>
+		    	<button type="submit">添加</button>
+			</form>
+		</div>
+
+		<!-- dialog: insert picture -->
+		<div class="modal fade" id="insertPicture" tabindex="-1" role="dialog" aria-labelledby="insertPictureLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="insertPictureLabel">插入图片</h4>
+					</div>
+					<textarea class="modal-body" id="insertPictureURL" placeholder="粘贴图片链接"></textarea><br>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" onclick="insert_picture()">完成</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- dialog: insert URL -->
+		<div class="modal fade" id="insertURL" tabindex="-1" role="dialog" aria-labelledby="insertURLLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="insertURLLabel">插入图片</h4>
+					</div>
+					<input id="insertURLName" value="" placeholder="链接" /><br>
+					<textarea class="modal-body" id="insertURLURL" placeholder="粘贴来源URL"></textarea><br>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" onclick="insert_url()">完成</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- hidden area -->
+		<div>
+			<input name="editboxName" type="hidden" value="" /><br>
+		</div>
+    </body>
+</html>
+
