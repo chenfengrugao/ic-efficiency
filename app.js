@@ -2,14 +2,16 @@
 var express = require('express');
 var fs = require("fs");
 var url = require("url");
-
+//var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser");
 
 //create express obj
 var app = express();
 app.use('/public', express.static('public')); //static router
 app.set('views', 'views');
 app.set('view engine', 'ejs');
-
+//app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended: false}));
 
 //load json files
 
@@ -18,6 +20,16 @@ app.get('/', function(req, res){
     res.render('index', {"ver": "0.1.0"});
 });
 
+app.post('/login', function(req, res){
+    var username = req.body.username;
+    var passwd = req.body.passwd;
+    //console.log("u:" + username + "p:" + passwd);
+    if(username == "chenf" && passwd == "123456"){
+	res.send("登录成功");
+    }else{
+	res.send("用户名或密码错误");
+    }
+});
 
 app.get('/add', function(req, res){
     res.render('add', {});

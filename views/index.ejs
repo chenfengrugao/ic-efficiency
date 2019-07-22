@@ -52,8 +52,10 @@
 
       <div class="" style="text-align:center">
 	<form action="login" method="post">
-	  <input type="text" id="username" placeholder="User Name"><br>
-	  <input type="password" id="passwd" placeholder="password"><br>
+	  <div class="form-group">
+	    <input class="form-control" type="text" id="username" name="username" placeholder="User Name">
+	    <input class="form-control" type="password" id="passwd" name="passwd" placeholder="Password">
+	  </div>
 	  <button type="submit" class="btn btn-primary">Login</button>
 	</form>
       </div>
