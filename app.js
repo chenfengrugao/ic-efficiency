@@ -1,4 +1,8 @@
 
+//
+// ic All in One
+//
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -19,10 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var mainRouter = require('./routes/main');
+var dailyreportRouter = require('./routes/dailyreport');
 var newIssueRouter = require('./routes/newIssue');
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/main', mainRouter);
+app.use('/dailyreport', dailyreportRouter);
 app.use('/newIssue', newIssueRouter);
 
 
