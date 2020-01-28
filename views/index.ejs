@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="ic, efficiency"/>
-    <meta name="description" content="IC Efficiency" />
-    <title>IC Efficiency</title>
-    <link rel="stylesheet" href="/bootstrap/4.1.3/bootstrap.min.css">
-    <script src="/bootstrap/4.1.3/jquery-3.3.1.min.js"></script>
-    <script src="/bootstrap/4.1.3/popper.min.js"></script>
-    <script src="/bootstrap/4.1.3/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/common.css">
+    <%- include('head', {header: header}) %>
+
     <style>
     </style>
-    
+
     <script>
     </script>
   </head>
@@ -26,56 +18,27 @@
 
       <div class="text-right"><a href="login">Login</a></div>
 
+      <% 
+        // generate cards for main menu
+        var cnt = 0; //index for dat[]
+        var MAX_COL = 3; //max card every row
+      %>
+      <% while(cnt < dat.length){ %>
       <div class="container" style="margin-top:1em; margin-bottom:1em;">
-        <div class="card-deck">      
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="dailyreport">
-              <span style="color:black;">Daily Report</span><br />
-              <span style="font-size:0.8em; color:gray;">Track and plan</span>
-            </a>
+        <div class="card-deck">
+          <% for(var i=0; i<MAX_COL; i++){ %>
+          <div class="card text-center">
+            <div style="margin: 1.5em;">
+              <a href="dailyreport">
+                <span style="color:black;"><%= dat[cnt].title %></span>              
+              </a><br>
+              <span style="font-size:0.8em; color:gray;"><%= dat[cnt].description %></span>
+            </div>
           </div>
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="knowhow">
-           <span style="color:black;">Know-how</span><br />
-              <span style="font-size:0.8em; color:gray;">Share experience</span>
-            </a>
-          </div>
+          <% cnt++; if(i<(MAX_COL - 1) && cnt==dat.length)break; } %>
         </div>
       </div>
-
-      <div class="container" style="margin-top:1em; margin-bottom:1em;">
-        <div class="card-deck">      
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="knowhow">
-           <span style="color:black;">Review</span><br />
-              <span style="font-size:0.8em; color:gray;">Code review</span>
-            </a>
-          </div>
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="progress">
-           <span style="color:black;">BUG</span><br />
-              <span style="font-size:0.8em; color:gray;">Issue tracking system</span>
-            </a>
-          </div> 
-        </div>
-      </div>
-
-      <div class="container" style="margin-top:1em; margin-bottom:1em;">
-        <div class="card-deck">      
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="knowhow">
-           <span style="color:black;">Chat</span><br />
-              <span style="font-size:0.8em; color:gray;">Live communication</span>
-            </a>
-          </div>
-          <div class="card text-center" style="padding:1.5em;">
-            <a href="progress">
-           <span style="color:black;">Progress</span><br />
-              <span style="font-size:0.8em; color:gray;">Project progress</span>
-            </a>
-          </div> 
-        </div>
-      </div>      
+      <% } %>
 
       <div class="footer text-center">
 	      <p>IC Efficiency v<%= ver %></p>

@@ -26,9 +26,10 @@ var mainRouter = require('./routes/main');
 var dailyreportRouter = require('./routes/dailyreport');
 var newIssueRouter = require('./routes/newIssue');
 app.use('/', indexRouter);
+app.use('/dailyreport', dailyreportRouter);
 app.use('/login', loginRouter);
 app.use('/main', mainRouter);
-app.use('/dailyreport', dailyreportRouter);
+
 app.use('/newIssue', newIssueRouter);
 
 

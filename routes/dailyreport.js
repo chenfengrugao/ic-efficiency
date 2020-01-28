@@ -1,20 +1,27 @@
 var express = require('express');
 var router = express.Router();
-//var sqlite3 = require('sqlite3').verbose();
-//var db = new sqlite3.Database('db/its.db');
+
+var sqlite3 = require('sqlite3');
+var db = new sqlite3.Database('db/iceff.db');
 
 router.get('/', function(req, res, next) {
-    // results = [];
-    // db.all("SELECT * from project", function(err, rows){
-    //     rows.map((row)=>{
-    //         results.push({"id":row.id,
-    //               "name":row.name,
-    //               "description":row.description})
-    //     });
-    //     console.log(results);
-    //     res.json(results);
-    // });
-    res.render('dailyreport');
+
+    var dat = [];
+    db.all("SELECT * from dailyreport", function(err, rows){
+        rows.map((row)=>{
+            dat.push({
+                "id":row.id,
+                "uid": row.uid,
+                "dt":row.dt,
+                "dr":row.dr
+            })
+        });
+        console.log(dat);
+        res.render('dailyreport', {dat: dat});
+    });
+
+    //console.log(dat);
+    //res.render('dailyreport', {dat: dat});
 });
 
 module.exports = router;
