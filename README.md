@@ -1,2 +1,5 @@
-# its
-issue tracking system for IC products
+
+# IC Efficiency
+
+Apps to improve IC flow and RD management.
+

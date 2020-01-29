@@ -1,11 +1,11 @@
 {
-   "name": "icAIO",
+   "name": "IC Efficiency",
    "version": "0.1.0",
-   "description": "ic all in one",
+   "description": "Apps for IC Efficiency",
    "license": "MIT",
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/chenfengrugao/its.git"
+      "url": "git+https://github.com/chenfengrugao/ic-efficiency.git"
    },
    "scripts": {
       "start": "node app.js"
