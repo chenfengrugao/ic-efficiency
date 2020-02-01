@@ -22,16 +22,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
-var mainRouter = require('./routes/main');
 var dailyreportRouter = require('./routes/dailyreport');
-var newIssueRouter = require('./routes/newIssue');
+var knowhowRouter = require('./routes/knowhow');
+var reviewRouter = require('./routes/review');
+var bugRouter = require('./routes/bug');
+var chatRouter = require('./routes/chat');
+var progressRouter = require('./routes/progress');
+
 app.use('/', indexRouter);
-app.use('/dailyreport', dailyreportRouter);
 app.use('/login', loginRouter);
-app.use('/main', mainRouter);
-
-app.use('/newIssue', newIssueRouter);
-
+app.use('/dailyreport', dailyreportRouter);
+app.use('/knowhow', knowhowRouter);
+app.use('/review', reviewRouter);
+app.use('/bug', bugRouter);
+app.use('/chat', chatRouter);
+app.use('/progress', progressRouter);
 
 var httpServer = app.listen(3001, function(){
     console.log("server running at http://127.0.0.1:3001");

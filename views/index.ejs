@@ -29,7 +29,11 @@
           <% for(var i=0; i<MAX_COL; i++){ %>
           <div class="card text-center">
             <div style="margin: 1.5em;">
-              <a href="dailyreport">
+              <a href="<%
+                var url = dat[cnt].title;
+                url = url.replace(/[\s_-]*/g,"");
+                url = url.toLowerCase();
+                %><%= url %>">
                 <span style="color:black;"><%= dat[cnt].title %></span>              
               </a><br>
               <span style="font-size:0.8em; color:gray;"><%= dat[cnt].description %></span>

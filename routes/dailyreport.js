@@ -6,6 +6,12 @@ var db = new sqlite3.Database('db/iceff.db');
 
 router.get('/', function(req, res, next) {
 
+    var header = {
+        'title': 'Daily Report | IC Efficiency',
+        'keywords': 'IC, Efficiency',
+        'description': 'Efficient suite for IC flow and management'
+      };
+
     var dat = [];
     db.all("SELECT * from dailyreport", function(err, rows){
         rows.map((row)=>{
@@ -17,11 +23,9 @@ router.get('/', function(req, res, next) {
             })
         });
         console.log(dat);
-        res.render('dailyreport', {dat: dat});
+        res.render('dailyreport', {header: header, dat: dat});
     });
 
-    //console.log(dat);
-    //res.render('dailyreport', {dat: dat});
 });
 
 module.exports = router;
