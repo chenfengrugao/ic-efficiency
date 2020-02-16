@@ -22,8 +22,10 @@ router.get('/', function(req, res, next) {
     
     //check md type
     var md_type = "md_normal";
-    if(req.query.md.endsWith('.ppt')){
-        md_type = "md_ppt";
+    if(typeof req.query.md != "undefined"){
+        if(req.query.md.endsWith('.ppt')){
+            md_type = "md_ppt";
+        }
     }
 
     //read md file, parse, and render
