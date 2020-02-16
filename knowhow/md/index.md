@@ -11,10 +11,10 @@
 
 ## 经验总结
 
-[用Python读Excel文件](http://127.0.0.1:3001/knowhow?md=py-36)  
+[用Python读Excel文件](knowhow?md=py-36)  
 
 ## 培训PPT
 
-[用Markdown写PPT](http://127.0.0.1:3001/knowhow?md=marpit.ppt)  
+[用Markdown写PPT](knowhow?md=marpit.ppt)  
 
 
