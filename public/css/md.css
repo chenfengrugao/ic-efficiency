@@ -1,0 +1,71 @@
+.md {
+    font-family: "Microsoft Yahei";
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.md h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em 0em 1em 0em;
+}
+.md h2 {
+    text-align: center;
+    font-size: 1.6em;
+    border: 1px dashed black;
+    padding: 0.5em;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+.md h3 {
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.md h4 {
+    text-align: left;
+    font-size: 1.4em;
+}
+.md h5 {
+    text-align: left;
+    font-size: 1.2em;
+}
+.md h6 {
+    text-align: left;
+    font-size: 1em;
+    color: #0080ff;
+}
+.md blockquote {
+    border-left: 0.2em solid #008000;
+    margin-left: 0.5em;
+    padding: 0.5em;
+}
+.md blockquote p{
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+.md img {
+    max-width: 100%;
+    height: auto;
+}
+.md table {
+    margin-bottom: 1em;
+}
+.md th {
+    border: 1px solid black;
+    padding: 5px;
+}
+.md td {
+    border: 1px solid black;
+    padding: 5px;
+}
+.tags_p {
+    font-size:1em;
+    color:#808080;
+}
+.tags {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 2px;
+}

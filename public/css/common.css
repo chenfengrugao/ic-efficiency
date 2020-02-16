@@ -9,11 +9,23 @@ body {
 .header {
     font-size: 2em;
     padding: 0.5em;
+    border-bottom: #0060a0 solid 0.3rem;
+}
+
+.header-notes {
+    font-size: 1rem;
+    color: gray;
 }
 
 .footer {
-    padding: 3em;
+    padding: 2em;
     font-size: 0.8em;
+    color: gray;
+    border-top: #0060a0 solid 0.3rem;
+}
+
+.footer-notes {
+    font-size: 1rem;
     color: gray;
 }
 
