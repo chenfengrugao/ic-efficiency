@@ -7,6 +7,8 @@
 
 还可以对文章评论、反馈、收藏。
 
+![介绍](image/ic-efficiency.png)
+
 ## 经验总结
 
 [用Python读Excel文件](http://127.0.0.1:3001/knowhow?md=py-36)  
