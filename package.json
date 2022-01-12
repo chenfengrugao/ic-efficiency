@@ -15,7 +15,7 @@
       "cookie-parser": "^1.4.4",
       "ejs": "~2.6.2",
       "express": "~4.17.1",
-      "markdown-it": "^10.0.0",
+      "markdown-it": "^12.3.2",
       "morgan": "^1.9.1",
       "sqlite3": "^4.0.9"
    }
